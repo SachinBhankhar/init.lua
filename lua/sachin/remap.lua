@@ -47,14 +47,9 @@ vim.keymap.set(
     "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
 )
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 -- vim.keymap.set("n", "<leader><leader>", function()
 --  vim.cmd("so")
 -- end)
 
---leetcode
-vim.keymap.set("n", "<leader>lt", "<cmd>Leet test<CR>")
-vim.keymap.set("n", "<leader>ls", "<cmd>Leet submit<CR>")
-vim.keymap.set("n", "<leader>ll", "<cmd>Leet last_submit<CR>")
