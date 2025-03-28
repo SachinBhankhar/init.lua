@@ -55,6 +55,9 @@ return {
                             }
                         }
                     }
+                    require("lspconfig").dartls.setup({
+                        settings = { dart = { lineLength = 160 } },
+                    })
                 end,
             }
         })
