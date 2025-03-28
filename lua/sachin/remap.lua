@@ -33,8 +33,8 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-i>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
@@ -54,10 +54,10 @@ vim.keymap.set("n", "<leader>fr", ":FlutterRun<CR>");
 vim.keymap.set("n", "<leader>dc", ":DapContinue<CR>");
 vim.keymap.set("n", "<leader>tb", ":lua require'dap'.toggle_breakpoint()<CR>");
 vim.keymap.set("n", "<leader>td", ":lua require'dapui'.toggle()<CR>");
-vim.keymap.set("n", "<C-K>", "<cmd>wincmd k<CR>")
-vim.keymap.set("n", "<C-J>", "<cmd>wincmd j<CR>")
-vim.keymap.set("n", "<C-H>", "<cmd>wincmd h<CR>")
-vim.keymap.set("n", "<C-L>", "<cmd>wincmd l<CR>")
+vim.keymap.set("n", "<C-k>", "<cmd>wincmd k<CR>")
+vim.keymap.set("n", "<C-j>", "<cmd>wincmd j<CR>")
+vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<CR>")
+vim.keymap.set("n", "<C-l>", "<cmd>wincmd l<CR>")
 
 -- vim.keymap.set("n", "<leader><leader>", function()
 --  vim.cmd("so")
