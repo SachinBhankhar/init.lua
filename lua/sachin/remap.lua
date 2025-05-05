@@ -49,6 +49,8 @@ vim.keymap.set(
 
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
+vim.api.nvim_set_keymap('i', '<C-y>', 'copilot#Accept("<CR>")', {expr=true, silent=true})
+
 -- vim.keymap.set("n", "<leader><leader>", function()
 --  vim.cmd("so")
 -- end)
