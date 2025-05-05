@@ -51,9 +51,6 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader>fd", ":FlutterDebug<CR>");
 vim.keymap.set("n", "<leader>fq", ":FlutterQuit<CR>");
 vim.keymap.set("n", "<leader>fr", ":FlutterRun<CR>");
-vim.keymap.set("n", "<leader>dc", ":DapContinue<CR>");
-vim.keymap.set("n", "<leader>tb", ":lua require'dap'.toggle_breakpoint()<CR>");
-vim.keymap.set("n", "<leader>td", ":lua require'dapui'.toggle()<CR>");
 vim.keymap.set("n", "<C-k>", "<cmd>wincmd k<CR>")
 vim.keymap.set("n", "<C-j>", "<cmd>wincmd j<CR>")
 vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<CR>")
