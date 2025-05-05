@@ -4,6 +4,8 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "nvimtools/none-ls.nvim",
+      "mfussenegger/nvim-dap",
+      "jay-babu/mason-nvim-dap.nvim",
     },
     config = function()
     end,
