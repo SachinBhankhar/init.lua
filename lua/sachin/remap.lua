@@ -31,7 +31,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set({ "n", "v" }, "<leader>f", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-m>", "<cmd>cprev<CR>zz")
@@ -56,7 +56,7 @@ vim.keymap.set("n", "<C-j>", "<cmd>wincmd j<CR>")
 vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<CR>")
 vim.keymap.set("n", "<C-l>", "<cmd>wincmd l<CR>")
 
-vim.api.nvim_set_keymap('i', '<C-y>', 'copilot#Accept("<CR>")', {expr=true, silent=true})
+vim.api.nvim_set_keymap('i', '<C-y>', 'copilot#Accept("<CR>")', { expr = true, silent = true })
 
 -- vim.keymap.set("n", "<leader><leader>", function()
 --  vim.cmd("so")
