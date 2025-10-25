@@ -12,23 +12,39 @@ return {
             local dap = require "dap"
             local ui = require "dapui"
 
-            require("dapui").setup()
-            require("dap-go").setup()
+            -- Configure dap-ui to only show the Breakpoints pane (right)
+            -- and the REPL/logs pane (bottom). Disable other panes and controls.
+            require("dapui").setup({
+                layouts = {
+                    {
+                        -- Breakpoints on the right
+                        elements = {
+                            { id = "breakpoints", size = 1.0 },
+                        },
+                        size = 40, -- width of right sidebar
+                        position = "right",
+                    },
+                    {
+                        -- REPL / logs at the bottom
+                        elements = {
+                            { id = "repl", size = 1.0 },
+                        },
+                        size = 10, -- height of bottom panel
+                        position = "bottom",
+                    },
+                },
+                -- Disable control UI (play/step buttons) since they're not needed
+                controls = {
+                    enabled = false,
+                },
+                floating = {
+                    max_height = 0.3,
+                    max_width = 0.5,
+                    border = "single",
+                },
+            })
 
-            vim.keymap.set("n", "<space>tb", require('dapui').toggle)
-
-            require("nvim-dap-virtual-text").setup()
-
-            -- Handled by nvim-dap-go
-            -- dap.adapters.go = {
-            --   type = "server",
-            --   port = "${port}",
-            --   executable = {
-            --     command = "dlv",
-            --     args = { "dap", "-l", "127.0.0.1:${port}" },
-            --   },
-            -- }
-
+            -- DAP adapter for Dart / Flutter
             dap.adapters.dart = {
                 type = "executable",
                 command = "dart",
@@ -64,18 +80,19 @@ return {
             vim.keymap.set("n", "<space>sb", dap.step_back)
             vim.keymap.set("n", "<space>rs", dap.restart)
 
-            dap.listeners.before.attach.dapui_config = function()
-                ui.open()
-            end
-            dap.listeners.before.launch.dapui_config = function()
-                ui.open()
-            end
-            dap.listeners.before.event_terminated.dapui_config = function()
-                ui.close()
-            end
-            dap.listeners.before.event_exited.dapui_config = function()
-                ui.close()
-            end
+            -- Keep automatic open/close behaviour but now only the configured panes will appear.
+            -- dap.listeners.before.attach.dapui_config = function()
+            --     ui.open()
+            -- end
+            -- dap.listeners.before.launch.dapui_config = function()
+            --     ui.open()
+            -- end
+            -- dap.listeners.before.event_terminated.dapui_config = function()
+            --     ui.close()
+            -- end
+            -- dap.listeners.before.event_exited.dapui_config = function()
+            --     ui.close()
+            -- end
         end,
     },
 }

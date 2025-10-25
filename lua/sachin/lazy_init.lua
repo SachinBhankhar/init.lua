@@ -15,10 +15,3 @@ require("lazy").setup({
     spec = "sachin.lazy",
     change_detection = { notify = false }
 })
-require("lazy").setup({
-    'akinsho/flutter-tools.nvim',
-    requires = {
-        'nvim-lua/plenary.nvim',
-        'stevearc/dressing.nvim', -- optional for vim.ui.select
-    },
-})

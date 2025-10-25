@@ -27,6 +27,8 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
+                "gopls",
+                "dart-debug-adapter",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -55,9 +57,9 @@ return {
                             }
                         }
                     }
-                    require("lspconfig").dartls.setup({
-                        settings = { dart = { lineLength = 160 } },
-                    })
+                    -- require("lspconfig").dartls.setup({
+                    --     settings = { dart = { lineLength = 160 } },
+                    -- })
                 end,
             }
         })

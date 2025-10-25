@@ -32,6 +32,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("v", "<leader>f", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-m>", "<cmd>cprev<CR>zz")
@@ -57,6 +58,24 @@ vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<CR>")
 vim.keymap.set("n", "<C-l>", "<cmd>wincmd l<CR>")
 
 vim.api.nvim_set_keymap('i', '<C-y>', 'copilot#Accept("<CR>")', {expr=true, silent=true})
+
+-- Toggle Flutter log window
+vim.keymap.set("n", "<leader>lt", function()
+  local log_found = false
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    local buf = vim.api.nvim_win_get_buf(win)
+    local name = vim.api.nvim_buf_get_name(buf)
+    if name:match("flutter%-tools") then
+      vim.api.nvim_win_close(win, true)
+      log_found = true
+      break
+    end
+  end
+  if not log_found then
+    vim.cmd("FlutterLogToggle")
+  end
+end, { desc = "Toggle Flutter logs" })
+
 
 -- vim.keymap.set("n", "<leader><leader>", function()
 --  vim.cmd("so")
