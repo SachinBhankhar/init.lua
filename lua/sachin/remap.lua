@@ -57,7 +57,7 @@ vim.keymap.set("n", "<C-j>", "<cmd>wincmd j<CR>")
 vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<CR>")
 vim.keymap.set("n", "<C-l>", "<cmd>wincmd l<CR>")
 
-vim.api.nvim_set_keymap('i', '<C-y>', 'copilot#Accept("<CR>")', {expr=true, silent=true})
+vim.api.nvim_set_keymap('i', '<C-y>', 'copilot#Accept("<CR>")', { expr = true, silent = true })
 
 -- Toggle Flutter log window
 vim.keymap.set("n", "<leader>lt", function()
