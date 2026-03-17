@@ -73,6 +73,10 @@ return {
                 require("dapui").eval(nil, { enter = true })
             end)
 
+            vim.keymap.set("v", "<space>?", function()
+                require("dapui").eval(nil, { enter = true })
+            end)
+
             vim.keymap.set("n", "<space>c", dap.continue)
             vim.keymap.set("n", "<space>si", dap.step_into)
             vim.keymap.set("n", "<space>sv", dap.step_over)
