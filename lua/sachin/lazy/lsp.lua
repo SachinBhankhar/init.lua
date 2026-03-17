@@ -28,7 +28,6 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "gopls",
-                "dart-debug-adapter",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
